@@ -71,22 +71,22 @@ def gameover():
 
 def score(score_value, x, y):
     font = pygame.font.SysFont("DejaVuSans", 32)
-    text = font.render("SCORE : " + str(score_value), True, (255, 255, 255))
+    text = font.render("Score : " + str(score_value), True, (255, 255, 255))
     screen.blit(text, (x, y))
 
 bullet_value = 0
 
 def bullet_used(bullet_value):
     font = pygame.font.SysFont("DejaVuSans", 32)
-    text = font.render("BULLET USED : " + str(bullet_value), True, (255, 255, 255))
-    screen.blit(text, (ScreenX//2, 10))
+    text = font.render("Bullet Used : " + str(bullet_value), True, (255, 255, 255))
+    screen.blit(text, (2*ScreenX//3, 10))
 
 efficiency_value = 0
 
 def efficiency(efficiency_value):
     font = pygame.font.SysFont("DejaVuSans", 32)
-    text = font.render("EFFICIENCY : " + str(((score_value / bullet_value) * 100)), True, (255, 255, 255))
-    screen.blit(text, (10, 100))
+    text = font.render("Efficiency : " + str(str(efficiency_value)+'%'), True, (255, 255, 255))
+    screen.blit(text, (ScreenX//3 -48,10))
 
 # collision
 def isCollision(bulletX, bulletY, enemyX, enemyY):
@@ -162,8 +162,10 @@ while running:
         bulletY = BY
         enemyX = random.randint(0, ScreenX-64)
         enemyY = random.randint(64, ScreenY//2-64)
-    #	if bullet_value > 0:
-    #	efficiency((score_value/bullet_value)*100)
+
+    if bullet_value > 0:
+        efficiency(round((score_value / bullet_value) * 100, 2))
+
     # background()
     player(playerX, playerY)
     enemy(enemyX, enemyY)
