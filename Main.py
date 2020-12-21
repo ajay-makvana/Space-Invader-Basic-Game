@@ -8,9 +8,9 @@ pygame.init()
 ScreenX = 600
 ScreenY = 780
 PXchange = 1
-PYchange = 0
+PYchange = 1
 EXchange = 1
-EYchange = 16
+EYchange = 32
 BX = 0
 BY = 700
 BXchange = 0
