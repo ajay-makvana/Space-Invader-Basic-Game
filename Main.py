@@ -15,7 +15,9 @@ BX = 0
 BY = 700
 BXchange = 0
 BYchange = 5
-
+#color
+RED = (255,0,0)
+WHITE = (255,255,255)
 
 screen = pygame.display.set_mode((ScreenX, ScreenY))
 
@@ -66,26 +68,26 @@ scoreY = 10
 #gameover
 def gameover():
     font = pygame.font.SysFont("DejaVuSans", 64)
-    text = font.render("GAME OVER", True, (255, 255, 255))
+    text = font.render("GAME OVER", True, RED)
     screen.blit(text, (170, ScreenY//2))
 
 def score(score_value, x, y):
     font = pygame.font.SysFont("DejaVuSans", 32)
-    text = font.render("Score : " + str(score_value), True, (255, 255, 255))
+    text = font.render("Score : " + str(score_value), True, RED)
     screen.blit(text, (x, y))
 
 bullet_value = 0
 
 def bullet_used(bullet_value):
     font = pygame.font.SysFont("DejaVuSans", 32)
-    text = font.render("Bullet Used : " + str(bullet_value), True, (255, 255, 255))
+    text = font.render("Bullet Used : " + str(bullet_value), True, RED)
     screen.blit(text, (2*ScreenX//3, 10))
 
 efficiency_value = 0
 
 def efficiency(efficiency_value):
     font = pygame.font.SysFont("DejaVuSans", 32)
-    text = font.render("Efficiency : " + str(str(efficiency_value)+'%'), True, (255, 255, 255))
+    text = font.render("Efficiency : " + str(str(efficiency_value)+'%'), True, WHITE)
     screen.blit(text, (ScreenX//3 -48,10))
 
 # collision
