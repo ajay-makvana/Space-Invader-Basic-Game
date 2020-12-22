@@ -133,6 +133,8 @@ while running:
     else:
         score(score_value, 10, 10)
         bullet_used(bullet_value)
+        if bullet_value > 0:
+            efficiency(round((score_value / bullet_value) * 100, 2))
 
     if playerX <= 0:
         playerX = 0
@@ -164,9 +166,6 @@ while running:
         bulletY = BY
         enemyX = random.randint(0, ScreenX-64)
         enemyY = random.randint(64, ScreenY//2-64)
-
-    if bullet_value > 0:
-        efficiency(round((score_value / bullet_value) * 100, 2))
 
     # background()
     player(playerX, playerY)
