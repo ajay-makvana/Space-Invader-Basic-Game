@@ -15,6 +15,7 @@ BX = 0
 BY = 700
 BXchange = 0
 BYchange = 5
+
 #color
 RED = (255,0,0)
 WHITE = (255,255,255)
